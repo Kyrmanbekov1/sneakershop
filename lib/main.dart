@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sneakershop/screen/home.dart';
+import 'package:sneakershop/presentation/providers/bag_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:sneakershop/presentation/screen/home.dart';
 
 
 void main(){
@@ -18,16 +20,19 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
 
       builder: (context, child) {
-        return  MaterialApp(
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-            appBarTheme: AppBarTheme(
-             backgroundColor: Colors.white10,
-             elevation: 0, 
+        return  ChangeNotifierProvider(
+          create: (context) => BagProvider(),
+          child: MaterialApp(
+            theme: ThemeData(
+              scaffoldBackgroundColor: Colors.white,
+              appBarTheme: AppBarTheme(
+               backgroundColor: Colors.white10,
+               elevation: 0, 
+              ),
             ),
+            debugShowCheckedModeBanner: false,
+            home: HomeScreen(),
           ),
-          debugShowCheckedModeBanner: false,
-          home: HomeScreen(),
         );
       },
     );

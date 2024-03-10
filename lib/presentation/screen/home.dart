@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:sneakershop/screen/home1.dart';
-import 'package:sneakershop/screen/shop.dart';
+import 'package:sneakershop/presentation/screen/home1.dart';
+import 'package:sneakershop/presentation/screen/shop.dart';
+import 'package:sneakershop/presentation/screen/shop_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -45,7 +46,9 @@ class HomeScreen extends StatelessWidget {
   List<Widget> _buildScreens() {
         return [ Home1Screen(),
                   ShopScreen(),
-                  ShopScreen()
+                  ShopScreen(),
+                   ShopCard(),
+                    ShopScreen()
          ];
     }
 
@@ -53,19 +56,26 @@ class HomeScreen extends StatelessWidget {
         return [
             PersistentBottomNavBarItem(
                 icon: Icon(CupertinoIcons.home),
-                title: ("Home"),
                 activeColorPrimary: CupertinoColors.activeBlue,
                 inactiveColorPrimary: CupertinoColors.systemGrey,
             ),
             PersistentBottomNavBarItem(
-                icon: Icon(CupertinoIcons.home),
-                title: ("like"),
+                icon: Icon(CupertinoIcons.heart),
                 activeColorPrimary: CupertinoColors.activeBlue,
                 inactiveColorPrimary: CupertinoColors.systemGrey,
             ),
             PersistentBottomNavBarItem(
-                icon: Icon(CupertinoIcons.settings),
-                title: ("Settings"),
+                icon: Icon(CupertinoIcons.location_solid),
+                activeColorPrimary: CupertinoColors.activeBlue,
+                inactiveColorPrimary: CupertinoColors.systemGrey,
+            ),
+            PersistentBottomNavBarItem(
+                icon: Icon(CupertinoIcons.shopping_cart),
+                activeColorPrimary: CupertinoColors.activeBlue,
+                inactiveColorPrimary: CupertinoColors.systemGrey,
+            ),
+            PersistentBottomNavBarItem(
+                icon: Icon(CupertinoIcons.person_fill),
                 activeColorPrimary: CupertinoColors.activeBlue,
                 inactiveColorPrimary: CupertinoColors.systemGrey,
             ),
