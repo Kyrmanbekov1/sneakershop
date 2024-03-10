@@ -58,24 +58,8 @@ class Home1Screen extends StatelessWidget {
            labelColor: Colors.black,
           ),
           Expanded(
-            child: TabBarView(children: [
-              Center(
-                child: OverflowBox(
-                  maxWidth: double.infinity, 
-                  maxHeight: double.infinity,
-                  child: Container(
-                    
-                    width: 237,
-                    height: 343,
-                     decoration: BoxDecoration(
-                    color: AppColors.buttoncolor,  
-                     borderRadius: BorderRadius.circular(20), 
-                     
-                     ),
-                     child: Stack(
-                      //clipBehavior: Clip.antiAlias,
-                    children: [
-                      
+            child: TabBarView(
+              children: [
                       Center(
                         
                         child: OverflowBox(
